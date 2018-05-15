@@ -29,6 +29,6 @@ app.get('/user/:id',(req,res)=>{
     console.log(req.params.id);
     res.send('user id: ' + req.params.id);
 })
-app.listen(3000,function () {
+app.listen(process.env.PORT||3000,function () {
     console.log('start listen http://localhost:3000');    
 });
