@@ -6,6 +6,9 @@ x('https://kiki.ccu.edu.tw/~ccmisp06/Course/5304.html','table > tr',[{
     teacher:'td:nth-child(5)'
 },
 ]).write('./course.json');*/
+if(process.env.NODE_ENV!=='production'){
+    require('dotenv').config();
+}
 const Express = require('express');
 const Helmet = require('helmet');
 const servestatic=require('serve-static');
@@ -29,6 +32,6 @@ app.get('/user/:id',(req,res)=>{
     console.log(req.params.id);
     res.send('user id: ' + req.params.id);
 })
-app.listen(process.env.PORT||3000,function () {
+app.listen(process.env.PORT,function () {
     console.log('start listen http://localhost:3000');    
 });
