@@ -46,7 +46,14 @@ app.get('/create/post',async (req,res)=>{
     res.send(post);
 })
 
-
+app.get('/posts', async (req,res)=>{
+    const posts=await Post.findAll();
+    res.send(posts);
+});
+app.get('/posts/:id',async(req,res)=>{
+    const post =await Post.findById(req.params.id);
+    res.send(post);
+})
 db.sync().then(() => {
     app.listen(process.env.PORT, function () {
         console.log('start listen http://localhost:3000');
