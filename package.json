@@ -12,6 +12,7 @@
   "author": "z7676x52678d@gmail.com",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "dotenv": "^5.0.1",
     "express": "^4.16.3",
     "helmet": "^3.12.0",
